@@ -9,10 +9,9 @@ def user_turn():
     input_number = input("Introduce un número entre 1 y 100: ") 
     global user_number
     user_number = int(input_number) 
-    if 0 < user_number > 100: 
+    if user_number < 1 or user_number > 100: 
         print("Ingresa un numero valido")
-    if user_number != int:
-        print("No es una entrada valida")
+    
 
 
 def comparison_user():
