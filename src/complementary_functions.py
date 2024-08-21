@@ -34,7 +34,7 @@ def record_numbers(number, record_list):
 def start_game():
     #inicio de juego
     print("Bienvenido al juego Guess the Number")
-    print("Adivia un numero al azar entre el 1 y 100")
+    print("Adivina un numero al azar entre el 1 y 100")
 
 
 def end_game(winner, record_list):
