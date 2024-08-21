@@ -14,6 +14,7 @@ def user_turn():
 
 def validate_number(number): 
     if number < 1 or number > 100:  
-        print("Ingresa un número dentro del rango") 
+        print("Ingresa un número valido") 
+        user_turn()
         return "Ingresa un número valido" 
     return number 

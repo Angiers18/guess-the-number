@@ -1,6 +1,5 @@
 from random import randrange
 
-
 def system_turn():
 #arroja un numero aleatorio del sistema  
     system_number = randrange(1, 100, 1)    

@@ -1,27 +1,40 @@
-import unittest 
+import unittest
 from unittest.mock import patch
-
 from game import game
 
-class TestGameComplete(unittest.TestCase):
+class TestGameSystem(unittest.TestCase):
     @patch('game.random_number')
-    @patch('game.user_turn') 
-    @patch('game.system_turn')
+    @patch('game.user_turn')   
+    @patch('game.system_turn')     
+    @patch('builtins.print')
 
-    def test_game_function(self, mock_user_turn, mock_system_turn, mock_random_number):
-
+    def test_game_system_win(self, mock_print, mock_system_turn, mock_user_turn, mock_random_number):
         mock_random_number.return_value = 75
-        mock_user_turn.return_value = 75
-        mock_system_turn.return_value = 38
+        mock_user_turn.return_value = 35 
+        mock_system_turn.return_value = 75 
         
-        # Capturar la salida del print
-        with patch('builtins.print') as mocked_print:
-            game()
-            # Verificar si el usuario ganó
-            mocked_print.assert_called_with("Registro de números [75]")
-            #mocked_print.assert_called_with("correcto!! acertaste el numero")
-            
+        game()
 
-    if __name__ == '__main__':
-        unittest.main()
-    
+        self.assertTrue(mock_print.called)
+        self.assertEqual(mock_print.call_count, 5)
+
+class TestGameUser(unittest.TestCase):
+    @patch('game.random_number')
+    @patch('game.user_turn')       
+    @patch('builtins.print')
+
+    def test_game_user_win(self, mock_print, mock_user_turn, mock_random_number):
+        mock_random_number.return_value = 52
+        mock_user_turn.return_value = 52
+        
+        
+        game()
+        print(mock_print)
+
+        self.assertTrue(mock_print.called)
+        self.assertEqual(mock_print.call_count, 4)
+        
+
+
+
+
