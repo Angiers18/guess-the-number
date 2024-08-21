@@ -1,5 +1,5 @@
 import unittest 
-from unittest.mock import patch 
+from unittest.mock import patch
 
 from complementary_functions import comparison, end_game
 
@@ -28,8 +28,11 @@ class TestEndgame(unittest.TestCase):
         end_game(winner, list_number)
 
         self.assertTrue(mock_print.called)
-
         self.assertEqual(mock_print.call_count, 2)
+
+        mock_print.assert_any_call(f"correcto!! {winner} acertaste el numero")
+        mock_print.assert_any_call(f"Registro de números {list_number}")
+
 
 
 

@@ -16,7 +16,7 @@ class TestGameSystem(unittest.TestCase):
         game()
 
         self.assertTrue(mock_print.called)
-        self.assertEqual(mock_print.call_count, 5)
+        self.assertEqual(mock_print.call_count, 7)
 
 class TestGameUser(unittest.TestCase):
     @patch('game.random_number')
@@ -29,10 +29,10 @@ class TestGameUser(unittest.TestCase):
         
         
         game()
-        print(mock_print)
+       
 
         self.assertTrue(mock_print.called)
-        self.assertEqual(mock_print.call_count, 4)
+        self.assertEqual(mock_print.call_count, 5)
         
 
 

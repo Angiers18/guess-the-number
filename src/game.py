@@ -1,4 +1,4 @@
-from complementary_functions import  random_number, comparison, record_numbers, end_game
+from complementary_functions import  random_number, comparison, record_numbers, end_game, start_game
 from user_turn import user_turn, validate_number
 from system_turn import system_turn
 
@@ -8,9 +8,10 @@ system_list = []
 
 def game():
  
+    start_game()
+
     number = random_number()
     
-     
     while True:
         print("-------------user turn----------------")
         user_number = user_turn()
@@ -32,6 +33,7 @@ def game():
             break
         
         else: comparison(system_number, number)
-        
+
+      
 if __name__ == '__main__':
     game()

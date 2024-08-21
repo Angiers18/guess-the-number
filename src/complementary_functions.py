@@ -17,6 +17,10 @@ def record_numbers(number, record_list):
     record_list.append(number)
     return record_list
 
+def start_game():
+    print("Bienvenido al juego Guess the Number")
+    print("Adivia un numero al azar entre el 1 y 100")
+
 
 def end_game(winner, record_list):
     print(f"correcto!! {winner} acertaste el numero")
